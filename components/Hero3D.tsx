@@ -172,7 +172,7 @@ export default function Hero3D() {
                         rotation={[mousePos.y * 0.1, mousePos.x * 0.2, 0]}
                         position={[0, 0, 0]}
                       >
-                        <ShoeModel colorway={shoe.id as any} active={true} mousePos={{x: 0, y: 0}} />
+                        <ShoeModel colorway={shoe.id as any} />
                       </group>
                     </Float>
                   )
