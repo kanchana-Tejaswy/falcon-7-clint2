@@ -1,0 +1,59 @@
+/* Hallmark · design-system: Atelier (Luxury Technical)
+ * paper: oklch(98.5% 0.005 30) · ink: oklch(18% 0.01 30) · accent: oklch(55% 0.18 30)
+ * display: Fraunces · body: Geist · outlier: Commit Mono
+ */
+
+:root {
+  /* Core Palette */
+  --color-paper: oklch(98.5% 0.005 30);
+  --color-paper-2: oklch(96% 0.006 30);
+  --color-ink: oklch(18% 0.01 30);
+  --color-ink-2: oklch(35% 0.008 30);
+  --color-muted: oklch(65% 0.005 30);
+  --color-rule: oklch(88% 0.006 30);
+  --color-rule-2: oklch(82% 0.008 30);
+  --color-accent: oklch(55% 0.18 30); /* Technical Terracotta */
+  --color-focus: oklch(65% 0.22 30 / 0.4);
+
+  /* Typography */
+  --font-display: "Fraunces", serif;
+  --font-body: "Geist", sans-serif;
+  --font-outlier: "Commit Mono", monospace;
+
+  /* Scale (1.25 Major Third) */
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-3xl: 3.0518rem;
+  --text-4xl: 3.8147rem;
+  --text-display: clamp(3.5rem, 10vw, 8rem);
+  --text-display-s: clamp(2.5rem, 6vw, 4.5rem);
+
+  /* Spacing (4pt Scale) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --page-gutter: clamp(1rem, 5vw, 4rem);
+
+  /* Rules & Surfaces */
+  --rule-hair: 1px;
+  --rule-thick: 4px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 200ms;
+  --dur-md: 450ms;
+  --dur-long: 800ms;
+}
