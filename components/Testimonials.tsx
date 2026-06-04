@@ -59,19 +59,19 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="w-full bg-[#F8F8F8] py-24 md:py-32 flex flex-col justify-center items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full space-y-16">
+    <section id="testimonials" className="w-full bg-[#070708] py-24 md:py-32 flex flex-col justify-center items-center overflow-hidden relative border-t border-white/5 bg-grid-pattern">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full space-y-16 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4 text-left">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-luxury-support font-semibold">
+            <span className="text-[9px] tracking-[0.4em] uppercase text-[#ff6b4a] font-bold">
               Global Perspectives
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-light tracking-tight text-black">
+            <h2 className="text-4xl md:text-5xl font-display font-light tracking-tight text-white animate-fade-in">
               Trusted by the Elite
             </h2>
-            <p className="text-sm md:text-base text-luxury-support max-w-xl font-light">
+            <p className="text-sm md:text-base text-neutral-400 max-w-xl font-light leading-relaxed">
               Athletes, designers, and medical professionals explain why Falcon 7 is their footwear of choice.
             </p>
           </div>
@@ -80,14 +80,14 @@ export default function Testimonials() {
           <div className="flex space-x-2">
             <button
               onClick={handlePrev}
-              className="p-3.5 border border-luxury-silver rounded-full bg-white text-black hover:bg-neutral-50 transition-all duration-300 outline-none flex items-center justify-center"
+              className="p-3.5 border border-white/10 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 outline-none flex items-center justify-center cursor-pointer shadow-lg"
               aria-label="Previous Review"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNext}
-              className="p-3.5 border border-luxury-silver rounded-full bg-white text-black hover:bg-neutral-50 transition-all duration-300 outline-none flex items-center justify-center"
+              className="p-3.5 border border-white/10 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 outline-none flex items-center justify-center cursor-pointer shadow-lg"
               aria-label="Next Review"
             >
               <ArrowRight className="w-4 h-4" />
@@ -97,7 +97,7 @@ export default function Testimonials() {
 
         {/* Carousel Slider Card */}
         <div className="relative w-full">
-          <div className="overflow-hidden rounded-3xl border border-luxury-silver bg-white shadow-sm">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0d] shadow-2xl">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -109,21 +109,21 @@ export default function Testimonials() {
                 >
                   {/* Left Column: Big visual details */}
                   <div className="lg:col-span-4 space-y-4">
-                    <span className="inline-block text-[9px] tracking-widest text-black bg-luxury-silver px-3 py-1.5 rounded-full uppercase font-mono font-bold">
+                    <span className="inline-block text-[9px] tracking-widest text-[#ff6b4a] bg-[#ff6b4a]/10 border border-[#ff6b4a]/20 px-3 py-1.5 rounded-full uppercase font-mono font-bold">
                       {testimonial.type} Review
                     </span>
 
-                    <div className="flex text-black space-x-0.5">
+                    <div className="flex text-[#ff6b4a] space-x-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-black" />
+                        <Star key={i} className="w-4 h-4 fill-[#ff6b4a] stroke-none" />
                       ))}
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-display font-medium text-black">
+                      <h4 className="text-xl font-display font-medium text-white">
                         {testimonial.name}
                       </h4>
-                      <p className="text-xs text-luxury-support font-light mt-1">
+                      <p className="text-xs text-neutral-400 font-light mt-1">
                         {testimonial.role}
                       </p>
                     </div>
@@ -131,10 +131,10 @@ export default function Testimonials() {
 
                   {/* Right Column: Quote */}
                   <div className="lg:col-span-8 flex items-start">
-                    <span className="text-6xl font-serif text-neutral-200 select-none mr-4 leading-[0.5] -mt-2">
+                    <span className="text-6xl font-serif text-neutral-800 select-none mr-4 leading-[0.5] -mt-2">
                       &ldquo;
                     </span>
-                    <p className="text-base md:text-xl font-display font-light text-black leading-relaxed">
+                    <p className="text-base md:text-xl font-display font-light text-white leading-relaxed">
                       {testimonial.quote}
                     </p>
                   </div>
@@ -144,13 +144,13 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
+          <div className="flex justify-center space-x-2.5 mt-8">
             {TESTIMONIALS.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`h-[3px] rounded-full transition-all duration-300 outline-none ${
-                  activeIndex === idx ? 'w-8 bg-black' : 'w-2 bg-neutral-300'
+                className={`h-[3px] rounded-full transition-all duration-300 outline-none cursor-pointer ${
+                  activeIndex === idx ? 'w-8 bg-[#ff6b4a]' : 'w-2 bg-white/10 hover:bg-white/25'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />

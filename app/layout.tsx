@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-black font-sans">
+      <body className="min-h-full flex flex-col bg-[#030303] text-[#f5f5f7] font-sans">
         {children}
       </body>
     </html>

@@ -60,17 +60,17 @@ export default function Navbar({ onNavClick }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed z-50 transition-all duration-500 ease-out ${
           scrolled
-            ? 'glassmorphism shadow-[0_4px_32px_rgba(0,0,0,0.01)] py-4'
-            : 'bg-transparent py-6'
+            ? 'top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl glassmorphism py-3 px-6 rounded-full border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.6)]'
+            : 'top-0 left-0 w-full bg-transparent py-6 px-6 md:px-12'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
           {/* Logo */}
           <button
             onClick={() => handleLinkClick('home')}
-            className="flex items-center space-x-2 text-black font-display font-bold tracking-[0.25em] text-lg outline-none hover:opacity-80 transition-opacity focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            className="flex items-center space-x-2 text-white font-display font-bold tracking-[0.3em] text-sm md:text-base outline-none hover:opacity-80 transition-opacity focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
           >
             <span>FALCON 7</span>
           </button>
@@ -81,10 +81,10 @@ export default function Navbar({ onNavClick }: NavbarProps) {
               <button
                 key={link.id}
                 onClick={() => handleLinkClick(link.id)}
-                className="relative text-xs tracking-widest uppercase text-luxury-support hover:text-black font-medium transition-colors duration-200 py-1 group outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded"
+                className="relative text-[10px] tracking-[0.2em] uppercase text-neutral-400 hover:text-white font-semibold transition-colors duration-200 py-1 group outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 rounded"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff6b4a] transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </nav>
@@ -93,27 +93,27 @@ export default function Navbar({ onNavClick }: NavbarProps) {
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => handleLinkClick('collection')}
-              className="px-4 py-3 bg-black text-white hover:bg-luxury-hover text-xs font-semibold tracking-wider uppercase transition-all duration-200 outline-none flex items-center gap-2 group border border-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              className="px-5 py-2.5 bg-white text-black hover:bg-neutral-200 text-[10px] font-bold tracking-widest uppercase transition-all duration-300 outline-none flex items-center gap-2 group border border-white rounded-full focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 shadow-lg shadow-white/5"
             >
               <span>Explore</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-black hover:opacity-75 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded"
+            className="lg:hidden text-white hover:opacity-75 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 rounded"
             aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </header>
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-white transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-between p-8 pt-24 ${
+        className={`fixed inset-0 z-45 bg-[#030303]/98 backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-between p-8 pt-28 ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -122,20 +122,20 @@ export default function Navbar({ onNavClick }: NavbarProps) {
             <button
               key={link.id}
               onClick={() => handleLinkClick(link.id)}
-              className="text-left text-2xl font-display font-light tracking-wide text-black hover:translate-x-2 transition-transform duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black rounded p-1"
+              className="text-left text-2xl font-display font-light tracking-wide text-white hover:translate-x-2 transition-transform duration-200 outline-none focus-visible:ring-2 focus-visible:ring-white rounded p-1"
             >
               {link.name}
             </button>
           ))}
         </nav>
         
-        <div className="border-t border-luxury-silver pt-8 flex flex-col space-y-4">
-          <p className="text-xs text-luxury-support tracking-widest uppercase font-semibold">
+        <div className="border-t border-white/10 pt-8 flex flex-col space-y-4">
+          <p className="text-[10px] text-neutral-400 tracking-[0.25em] uppercase font-bold">
             Falcon 7 Flagship Experience
           </p>
           <button
             onClick={() => handleLinkClick('collection')}
-            className="w-full py-4 bg-black text-white hover:bg-luxury-hover text-center text-sm font-semibold tracking-widest uppercase transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black"
+            className="w-full py-3.5 bg-white text-black hover:bg-neutral-200 rounded-full text-center text-xs font-bold tracking-widest uppercase transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-white shadow-lg shadow-white/5"
           >
             Explore Collection
           </button>

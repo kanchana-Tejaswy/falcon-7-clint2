@@ -46,7 +46,7 @@ export const SHOES: ShoeData[] = [
   },
   {
     id: 'velocity',
-    name: 'Falcon 7 Velocity',
+    name: 'Falcon 7 Vector',
     tagline: 'Speed Redefined',
     description: 'Engineered for explosive acceleration and linear power. Features a double-stiffened carbon plate with a forward-bias geometry to spring the athlete into their next stride with minimal energy loss.',
     weight: '235g',
